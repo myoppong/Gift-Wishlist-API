@@ -7,5 +7,5 @@ const wishlistItemSchema = new Schema({
     storeLink: { type: String }
 }, { timestamps: true });
 
-export const wishlistItem = model('wishlistItem', wishlistItemSchema);
+export const wishlistItemModel = model('wishlistItem', wishlistItemSchema);
 

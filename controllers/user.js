@@ -2,8 +2,38 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { userModel } from "../models/user.js";
 import dotenv from "dotenv";
+import { userValidator } from "../validators/validator.js";
 
-dotenv.config(); // Load environment variables
+dotenv.config();
+
+
+// export const registerUser = async (req, res) =>{
+
+//     const {error,value} = userValidator.validate(req.body)
+//     if(error) {
+//         return res.status(400).json({message: error.details[0].message})
+//     }
+//     console.log(value)
+//     const existingUser = await userModel.findOne({email: value.email})
+//     console.log("existingUser:", existingUser)
+
+//     if(existingUser){
+//         res.status(409).json({message:"user already exist"})
+//     } else {
+//         const hashedPassword= bcrypt.hash(value.password,12)
+//         const newUser= await userModel.create({
+//             username: value.username,
+//             email:value.email,
+//             password: hashedPassword
+
+//         })
+//        return res.status(201).json({
+//             message:"user created successfully ",
+//             data:newUser
+
+//         })
+//     }
+// }
 
 // Register User
 export const registerUser = async (req, res) => {

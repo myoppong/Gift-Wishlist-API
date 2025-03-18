@@ -4,6 +4,7 @@ import { connect } from 'mongoose';
 import wishlistItemRouter from './routes/wishlistItem.js';
 import userRouter from './routes/user.js';
 import authRouter from "./routes/auth.js";
+import Joi from "joi";
 
 dotenv.config();  // Load environment variables
 
